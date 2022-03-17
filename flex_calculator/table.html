@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>qzw</title>
+    <style>
+        table {
+
+            margin: 0 auto;
+
+        }
+
+
+        .b {
+            width: 160px;
+            height: 60px;
+            background-color: rgba(138, 27, 27, 0.774);
+            font-size: 1.2em;
+        }
+
+        .screen {
+            width: 350px;
+            height: 70px;
+            font-size: 1.5em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.13);
+            text-align: right;
+        }
+    </style>
+
+     <a href="./flex.html">点我跳转</a>
+<table>
+    <tr>
+        <td colspan="4"><input class="screen" type="text" disabled /></td>
+    </tr>
+    <tr>
+        <td><input class="b" type="button" value="AC" style="color: orange"></td>
+        <td><input class="b" type="button" value="sc" style="color: orange"></td>
+        <td><input class="b" type="button" value="qzw is handsome" style="color:aqua"></td>
+        <td><input class="b" type="button" value="/"></td>
+    </tr>
+    <tr>
+        <td><input class="b" type="button" value="7"></td>
+        <td><input class="b" type="button" value="8"></td>
+        <td><input class="b" type="button" value="9"></td>
+        <td><input class="b" type="button" value="*"></td>
+    </tr>
+    <tr>
+        <td><input class="b" type="button" value="4"></td>
+        <td><input class="b" type="button" value="5"></td>
+        <td><input class="b" type="button" value="6"></td>
+        <td><input class="b" type="button" value="-"></td>
+    </tr>
+    <tr>
+        <td><input class="b" type="button" value="1"></td>
+        <td><input class="b" type="button" value="2"></td>
+        <td><input class="b" type="button" value="3"></td>
+        <td><input class="b" type="button" value="+"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input class="b" type="button" value="0" style="width: 180px"></td>
+        <td><input class="b" type="button" value="."></td>
+        <td><input class="b" type="button" value="=" style="background-color:orange ;color:white"></td>
+    </tr>
+
+
+</table>
+
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var result;
+            var num = document.getElementsByClassName("b");
+            var scr = document.getElementsByClassName("screen")[0];
+            for (var i = 0; i < num.length; i++) {
+
+                num[i].onclick = function () {
+
+                    if (this.value == "AC") {
+                        scr.value = "";
+                    }
+
+                    else if (this.value == "qzw is handsome") {
+                        scr.value = "You are clever";
+                    }
+
+                    else if (this.value == "sc" && this.value != "") {
+                        scr.value = scr.value.substr(0, scr.value.length - 1);
+                    }
+                    else if (scr.value == "" && this.value == ".") {
+                        scr.value = "0.";
+                    }
+                    else if (this.value == "=") {
+                        scr.value = eval(scr.value);
+                    }
+                    else if (scr.value == "" && (this.value == "+" || this.value == "-" || this.value == "*" || this.value == "/")) {
+                        scr.value == "";
+                    }
+
+                    else {
+                        scr.value += this.value;
+                    }
+                }
+            }
+
+        }
+
+    </script>
+    
+</body>
+
+</html>
